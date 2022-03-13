@@ -4,6 +4,11 @@
     height: var(--size-10) !important;
   } */
 }
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 * {
   margin: 0;
   padding: 0;
@@ -62,7 +67,25 @@ main {
   height: 30px;
   background-color: var(--indigo-4);
 }
-
+.gallery {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  height: 400px;
+  background-color: var(--gray-7);
+}
+/* .gallery::-webkit-scrollbar {
+  display: none;
+} */
+.gFrame {
+  margin: 5px;
+  flex: 0 0 auto;
+  background-color: var(--red-7);
+  width: 300px;
+}
+.about {
+  height: 300px;
+}
 @keyframes wobble {
   0%,
   100% {
