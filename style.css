@@ -1,9 +1,3 @@
-@media (max-width: 600px) {
-  /* .blobContainer {
-    width: var(--size-10) !important;
-    height: var(--size-10) !important;
-  } */
-}
 .container {
   width: 100%;
   margin: 0;
@@ -13,17 +7,17 @@
   margin: 0;
   padding: 0;
 }
-nav {
-  background-color: var(--lime-4);
-  width: 100%;
-  height: 3rem;
-}
+
 main {
   display: flex;
   flex-flow: row wrap;
-  background-color: var(--red-4);
+  background-color: var(--gray-7);
   width: 100%;
-  height: 30rem;
+  min-height: var(--size-14);
+  max-height: var(--size-15);
+}
+footer {
+  height: 100px;
 }
 .faceCard {
   display: grid;
@@ -33,25 +27,40 @@ main {
   padding: 5px;
   margin: 5px;
   z-index: 1;
-  background-color: var(--blue-4);
+  /* background-color: var(--blue-4); */
   flex: 1 var(--size-content-1);
 }
 .nameCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 5px;
   margin: 5px;
-  background-color: var(--yellow-4);
+  /* background-color: var(--yellow-4); */
   flex: 2 var(--size-content-2);
+}
+.nameCard h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: var(--gray-3);
+  text-align: center;
+  font-size: 8ch;
+}
+.nameCard h2 {
+  color: var(--gray-3);
+  font-family: MontserratAceRegular;
+  font-size: 4ch;
 }
 .blobContainer {
   grid-column-start: 1;
   grid-column-end: 1;
   grid-row-start: 1;
   grid-row-end: 1;
-  background-color: var(--cyan-7);
-  width: 17vmax;
-  height: 17vmax;
+  background-image: url(/Images/cover-image.png);
+  width: 20vmax;
+  height: 20vmax;
   border-radius: var(--radius-blob-4);
-  animation: wobble linear infinite, var(--animation-spin);
+  animation: wobble linear infinite /*, var(--animation-spin)*/;
   animation-duration: 20s;
   margin: 0;
 }
@@ -61,11 +70,20 @@ main {
   grid-row-start: 1;
   grid-row-end: 1;
   z-index: 2;
+  width: 17vmax;
+  height: 17vmax;
+  /* width: calc(var(--size-12) + var(--size-7));
+  height: calc(var(--size-12) + var(--size-7)); */
 }
 .seperator {
+  aspect-ratio: 500/50;
   width: 100%;
-  height: 30px;
-  background-color: var(--indigo-4);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.greyToCyan {
+  animation: waves linear 10s infinite;
 }
 .gallery {
   display: flex;
@@ -84,6 +102,7 @@ main {
   width: 300px;
 }
 .about {
+  background-color: var(--cyan-6);
   height: 300px;
 }
 @keyframes wobble {
@@ -103,4 +122,30 @@ main {
   80% {
     border-radius: var(--radius-blob-1);
   }
+}
+@keyframes waves {
+  0% {
+    background-image: url("/Svgs/layered-waves-haikei.svg");
+  }
+  25% {
+    background-image: url("/Svgs/layered-waves-haikei\ \(1\).svg");
+  }
+  50% {
+    background-image: url("/Svgs/layered-waves-haikei\ \(2\).svg");
+  }
+  75% {
+    background-image: url("/Svgs/layered-waves-haikei\ \(3\).svg");
+  }
+  100% {
+    background-image: url("/Svgs/layered-waves-haikei.svg");
+  }
+}
+@media (max-width: 559px) {
+  .nameCard h1 {
+    font-size: 6ch;
+  }
+  /* .blobContainer {
+    width: var(--size-10) !important;
+    height: var(--size-10) !important;
+  } */
 }
