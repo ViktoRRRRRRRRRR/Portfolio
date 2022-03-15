@@ -1,3 +1,10 @@
+:root {
+  --black-blue: #05386b;
+  --dark-green: #379683;
+  --green: #5cdb95;
+  --light-green: #8ee4af;
+  --white: #edf5e1;
+}
 .container {
   width: 100%;
   margin: 0;
@@ -42,12 +49,12 @@ footer {
 }
 .nameCard h1 {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: var(--gray-3);
+  color: var(--gray-2);
   text-align: center;
   font-size: 8ch;
 }
 .nameCard h2 {
-  color: var(--gray-3);
+  color: var(--gray-2);
   font-family: MontserratAceRegular;
   font-size: 4ch;
 }
@@ -83,14 +90,17 @@ footer {
   background-size: cover;
 }
 .greyToCyan {
-  animation: waves linear 10s infinite;
+  animation: greyToCyanWaves linear 10s infinite;
+}
+.cyanToOrange {
+  animation: cyanToOrangeWaves linear 10s infinite;
 }
 .gallery {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   height: 400px;
-  background-color: var(--gray-7);
+  background-color: var(--orange-5);
 }
 /* .gallery::-webkit-scrollbar {
   display: none;
@@ -98,7 +108,7 @@ footer {
 .gFrame {
   margin: 5px;
   flex: 0 0 auto;
-  background-color: var(--red-7);
+  background-color: var(--orange-4);
   width: 300px;
 }
 .about {
@@ -123,23 +133,41 @@ footer {
     border-radius: var(--radius-blob-1);
   }
 }
-@keyframes waves {
+@keyframes greyToCyanWaves {
   0% {
-    background-image: url("/Svgs/layered-waves-haikei.svg");
+    background-image: url("/greyToCyan/layered-waves-haikei.svg");
   }
   25% {
-    background-image: url("/Svgs/layered-waves-haikei\ \(1\).svg");
+    background-image: url("/greyToCyan/layered-waves-haikei\ \(1\).svg");
   }
   50% {
-    background-image: url("/Svgs/layered-waves-haikei\ \(2\).svg");
+    background-image: url("/greyToCyan/layered-waves-haikei\ \(2\).svg");
   }
   75% {
-    background-image: url("/Svgs/layered-waves-haikei\ \(3\).svg");
+    background-image: url("/greyToCyan/layered-waves-haikei\ \(3\).svg");
   }
   100% {
-    background-image: url("/Svgs/layered-waves-haikei.svg");
+    background-image: url("/greyToCyan/layered-waves-haikei.svg");
   }
 }
+@keyframes cyanToOrangeWaves {
+  0% {
+    background-image: url("/cyanToOrange/layered-waves-haikei.svg");
+  }
+  25% {
+    background-image: url("/cyanToOrange/layered-waves-haikei\ \(1\).svg");
+  }
+  50% {
+    background-image: url("/cyanToOrange/layered-waves-haikei\ \(2\).svg");
+  }
+  75% {
+    background-image: url("/cyanToOrange/layered-waves-haikei\ \(3\).svg");
+  }
+  100% {
+    background-image: url("/cyanToOrange/layered-waves-haikei.svg");
+  }
+}
+
 @media (max-width: 559px) {
   .nameCard h1 {
     font-size: 6ch;
