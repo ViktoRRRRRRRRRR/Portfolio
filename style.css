@@ -1,14 +1,11 @@
 :root {
-  --black-blue: #05386b;
-  --dark-green: #379683;
-  --green: #5cdb95;
-  --light-green: #8ee4af;
-  --white: #edf5e1;
-}
-.container {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  --text-light: var(--gray-1);
+  --text-dark: var(--gray-8);
+  --blob-background-image: var(--gradient-17);
+  --main-background-image: var(--gradient-23);
+  --about-background-color: var(--blue-7);
+  --gallery-background-color: var(--cyan-8);
+  --galleryFrame-background-color: var(--cyan-5);
 }
 * {
   margin: 0;
@@ -18,7 +15,7 @@
 main {
   display: flex;
   flex-flow: row wrap;
-  background-image: var(--gradient-2);
+  background-image: var(--main-background-image);
   width: 100%;
   min-height: var(--size-14);
   max-height: var(--size-15);
@@ -26,6 +23,13 @@ main {
 footer {
   height: 100px;
 }
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* -------------------- Children of Main (Face and Text) -------------------- */
 .faceCard {
   display: grid;
   grid: [stack] 1fr / [stack] 1fr;
@@ -34,7 +38,6 @@ footer {
   padding: 5px;
   margin: 5px;
   z-index: 1;
-  /* background-color: var(--blue-4); */
   flex: 1 var(--size-content-1);
 }
 .nameCard {
@@ -44,17 +47,16 @@ footer {
   align-items: center;
   padding: 5px;
   margin: 5px;
-  /* background-color: var(--yellow-4); */
   flex: 2 var(--size-content-2);
 }
 .nameCard h1 {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: var(--gray-2);
+  color: var(--text-light);
   text-align: center;
   font-size: 8ch;
 }
 .nameCard h2 {
-  color: var(--gray-2);
+  color: var(--text-light);
   font-family: MontserratAceRegular;
   font-size: 4ch;
 }
@@ -63,7 +65,7 @@ footer {
   grid-column-end: 1;
   grid-row-start: 1;
   grid-row-end: 1;
-  background-image: var(--gradient-1);
+  background-image: var(--blob-background-image);
   width: 20vmax;
   height: 20vmax;
   border-radius: var(--radius-blob-4);
@@ -79,9 +81,8 @@ footer {
   z-index: 2;
   width: 17vmax;
   height: 17vmax;
-  /* width: calc(var(--size-12) + var(--size-7));
-  height: calc(var(--size-12) + var(--size-7)); */
 }
+/* -------------------------- Seperator and Friends ------------------------- */
 .seperator {
   aspect-ratio: 500/30;
   width: 100%;
@@ -97,26 +98,26 @@ footer {
   /* animation: cyanToOrangeWaves linear 10s infinite; */
   background-image: url(/blueToCyan/layered-peaks-haikei.svg);
 }
+/* ---------------------------------- About --------------------------------- */
+.about {
+  background-color: var(--about-background-color);
+  height: 300px;
+}
+/* --------------------------------- Gallery -------------------------------- */
 .gallery {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   height: 400px;
-  background-color: #4fd3c4;
+  background-color: var(--gallery-background-color);
 }
-/* .gallery::-webkit-scrollbar {
-  display: none;
-} */
 .gFrame {
   margin: 5px;
   flex: 0 0 auto;
-  background-color: #c1f8cf;
+  background-color: var(--galleryFrame-background-color);
   width: 300px;
 }
-.about {
-  background-color: var(--blue-7);
-  height: 300px;
-}
+/* ----------- Animations Fonts and Media (TODO: CLEAN UP UNUSED) ----------- */
 @keyframes wobble {
   0%,
   100% {
@@ -174,8 +175,8 @@ footer {
   .nameCard h1 {
     font-size: 6ch;
   }
-  /* .blobContainer {
-    width: var(--size-10) !important;
-    height: var(--size-10) !important;
-  } */
+}
+@font-face {
+  font-family: "Hi Score";
+  src: url(/Fonts/NewHiScore.ttf);
 }
