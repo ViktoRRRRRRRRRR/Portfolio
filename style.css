@@ -18,7 +18,7 @@
 main {
   display: flex;
   flex-flow: row wrap;
-  background-color: var(--gray-7);
+  background-image: var(--gradient-2);
   width: 100%;
   min-height: var(--size-14);
   max-height: var(--size-15);
@@ -63,11 +63,11 @@ footer {
   grid-column-end: 1;
   grid-row-start: 1;
   grid-row-end: 1;
-  background-image: url(/Images/cover-image.png);
+  background-image: var(--gradient-1);
   width: 20vmax;
   height: 20vmax;
   border-radius: var(--radius-blob-4);
-  animation: wobble linear infinite /*, var(--animation-spin)*/;
+  animation: wobble linear infinite, var(--animation-spin);
   animation-duration: 20s;
   margin: 0;
 }
@@ -83,24 +83,26 @@ footer {
   height: calc(var(--size-12) + var(--size-7)); */
 }
 .seperator {
-  aspect-ratio: 500/50;
+  aspect-ratio: 500/30;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-.greyToCyan {
-  animation: greyToCyanWaves linear 10s infinite;
+.purpleToBlue {
+  /* animation: greyToCyanWaves linear 10s infinite; */
+  background-image: url(/purpleToBlue/layered-peaks-haikei.svg);
 }
 .cyanToOrange {
-  animation: cyanToOrangeWaves linear 10s infinite;
+  /* animation: cyanToOrangeWaves linear 10s infinite; */
+  background-image: url(/blueToCyan/layered-peaks-haikei.svg);
 }
 .gallery {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   height: 400px;
-  background-color: var(--orange-5);
+  background-color: #4fd3c4;
 }
 /* .gallery::-webkit-scrollbar {
   display: none;
@@ -108,11 +110,11 @@ footer {
 .gFrame {
   margin: 5px;
   flex: 0 0 auto;
-  background-color: var(--orange-4);
+  background-color: #c1f8cf;
   width: 300px;
 }
 .about {
-  background-color: var(--cyan-6);
+  background-color: var(--blue-7);
   height: 300px;
 }
 @keyframes wobble {
