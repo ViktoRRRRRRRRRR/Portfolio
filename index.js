@@ -31,6 +31,6 @@ function getRandomInt(max) {
   return Math.random() * (max - 15) + 15; //random number more than 15 but no more than max
 }
 //@ts-ignore
-particlesJS.load("stars", "/particlesjs-config.json", function () {
+particlesJS.load("stars", "/Particles/particlesjs-config.json", function () {
   console.log("callback - particles.js config loaded");
 });
