@@ -1,11 +1,26 @@
 :root {
-  --text-light: var(--gray-1);
+  --text-light: #eeeeee;
   --text-dark: var(--gray-8);
   --blob-background-image: var(--gradient-17);
   --main-background-image: var(--gradient-23);
-  --about-background-color: var(--blue-7);
-  --gallery-background-color: var(--cyan-8);
-  --galleryFrame-background-color: var(--cyan-5);
+  --about-background-color: #393e46;
+  --gallery-background-color: #222831;
+  --galleryFrame-background-color: #393e46;
+  --blob1: var(--radius-blob-1);
+  --blob2: var(--radius-blob-2);
+  --blob3: var(--radius-blob-3);
+  --blob4: var(--radius-blob-4);
+  --blob5: var(--radius-blob-5);
+
+  /* NOTES: Oc colors{
+    white: #fffff
+    grey white: #f0e8e6
+    (oyster white: #fee3bc these two go well together
+    (light ivory: #f1b990
+    ((orange brown: #aa7446
+    ((signal black: #2a2622
+    cream: #fffee5
+  } */
 }
 * {
   margin: 0;
@@ -15,7 +30,7 @@
 main {
   display: flex;
   flex-flow: row wrap;
-  background-image: var(--main-background-image);
+  background-color: #222831;
   width: 100%;
   min-height: var(--size-14);
   max-height: var(--size-15);
@@ -56,7 +71,7 @@ footer {
   font-size: 8ch;
 }
 .nameCard h2 {
-  color: var(--text-light);
+  color: #ffd369;
   font-family: MontserratAceRegular;
   font-size: 4ch;
 }
@@ -65,7 +80,7 @@ footer {
   grid-column-end: 1;
   grid-row-start: 1;
   grid-row-end: 1;
-  background-image: var(--blob-background-image);
+  background-color: #ffd369;
   width: 20vmax;
   height: 20vmax;
   border-radius: var(--radius-blob-4);
@@ -84,20 +99,13 @@ footer {
 }
 /* -------------------------- Seperator and Friends ------------------------- */
 .seperator {
-  aspect-ratio: 500/30;
+  aspect-ratio: 500/15;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-.purpleToBlue {
-  /* animation: greyToCyanWaves linear 10s infinite; */
-  background-image: url(/purpleToBlue/layered-peaks-haikei.svg);
-}
-.cyanToOrange {
-  /* animation: cyanToOrangeWaves linear 10s infinite; */
-  background-image: url(/blueToCyan/layered-peaks-haikei.svg);
-}
+
 /* ---------------------------------- About --------------------------------- */
 .about {
   background-color: var(--about-background-color);
@@ -116,6 +124,7 @@ footer {
   flex: 0 0 auto;
   background-color: var(--galleryFrame-background-color);
   width: 300px;
+  border-radius: var(--radius-blob-3);
 }
 /* ----------- Animations Fonts and Media (TODO: CLEAN UP UNUSED) ----------- */
 @keyframes wobble {
@@ -136,41 +145,6 @@ footer {
     border-radius: var(--radius-blob-1);
   }
 }
-@keyframes greyToCyanWaves {
-  0% {
-    background-image: url("/greyToCyan/layered-waves-haikei.svg");
-  }
-  25% {
-    background-image: url("/greyToCyan/layered-waves-haikei\ \(1\).svg");
-  }
-  50% {
-    background-image: url("/greyToCyan/layered-waves-haikei\ \(2\).svg");
-  }
-  75% {
-    background-image: url("/greyToCyan/layered-waves-haikei\ \(3\).svg");
-  }
-  100% {
-    background-image: url("/greyToCyan/layered-waves-haikei.svg");
-  }
-}
-@keyframes cyanToOrangeWaves {
-  0% {
-    background-image: url("/cyanToOrange/layered-waves-haikei.svg");
-  }
-  25% {
-    background-image: url("/cyanToOrange/layered-waves-haikei\ \(1\).svg");
-  }
-  50% {
-    background-image: url("/cyanToOrange/layered-waves-haikei\ \(2\).svg");
-  }
-  75% {
-    background-image: url("/cyanToOrange/layered-waves-haikei\ \(3\).svg");
-  }
-  100% {
-    background-image: url("/cyanToOrange/layered-waves-haikei.svg");
-  }
-}
-
 @media (max-width: 559px) {
   .nameCard h1 {
     font-size: 6ch;
