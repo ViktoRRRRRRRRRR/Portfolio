@@ -130,8 +130,8 @@ footer {
 #stars {
   position: absolute;
   width: 100%;
-  min-height: var(--size-14);
-  max-height: var(--size-15);
+  height: 22vw;
+  min-height: 320px;
 }
 /* ----------- Animations Fonts and Media (TODO: CLEAN UP UNUSED) ----------- */
 @keyframes wobble {
