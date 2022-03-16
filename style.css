@@ -109,7 +109,7 @@ footer {
 /* ---------------------------------- About --------------------------------- */
 .about {
   background-color: var(--about-background-color);
-  height: 300px;
+  height: 295px;
 }
 /* --------------------------------- Gallery -------------------------------- */
 .gallery {
@@ -123,8 +123,15 @@ footer {
   margin: 5px;
   flex: 0 0 auto;
   background-color: var(--galleryFrame-background-color);
-  width: 300px;
+  width: 400px;
   border-radius: var(--radius-blob-3);
+}
+/* -------------------------------- STARS!!! -------------------------------- */
+#stars {
+  position: absolute;
+  width: 100%;
+  min-height: var(--size-14);
+  max-height: var(--size-15);
 }
 /* ----------- Animations Fonts and Media (TODO: CLEAN UP UNUSED) ----------- */
 @keyframes wobble {
