@@ -53,7 +53,7 @@ footer {
   padding: 5px;
   margin: 5px;
   z-index: 1;
-  flex: 1 var(--size-content-1);
+  flex: 1 1;
 }
 .nameCard {
   display: flex;
@@ -62,7 +62,7 @@ footer {
   align-items: center;
   padding: 5px;
   margin: 5px;
-  flex: 2 var(--size-content-2);
+  flex: 2 2;
 }
 .nameCard h1 {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -108,8 +108,39 @@ footer {
 
 /* ---------------------------------- About --------------------------------- */
 .about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--about-background-color);
-  height: 295px;
+  height: 350px;
+}
+.me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  flex: 1 2;
+  width: 200px;
+  height: 250px;
+  margin: 30px;
+}
+.me h1 {
+  font-size: 10ch;
+}
+.meText p {
+  margin: var(--size-1);
+  max-inline-size: var(--size-content-2);
+  font-size: var(--size-4);
+}
+
+.meText {
+  display: flex;
+  background-color: red;
+  flex: 2 2;
+  width: 200px;
+  height: 250px;
+  margin: 30px;
 }
 /* --------------------------------- Gallery -------------------------------- */
 .gallery {
