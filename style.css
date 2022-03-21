@@ -2,25 +2,11 @@
   --text-light: #eeeeee;
   --text-dark: var(--gray-8);
   --blob-background-image: var(--gradient-17);
-  --main-background-image: var(--gradient-23);
+  --main-background-color: #222831;
   --about-background-color: #393e46;
   --gallery-background-color: #222831;
   --galleryFrame-background-color: #393e46;
-  --blob1: var(--radius-blob-1);
-  --blob2: var(--radius-blob-2);
-  --blob3: var(--radius-blob-3);
-  --blob4: var(--radius-blob-4);
-  --blob5: var(--radius-blob-5);
-
-  /* NOTES: Oc colors{
-    white: #fffff
-    grey white: #f0e8e6
-    (oyster white: #fee3bc these two go well together
-    (light ivory: #f1b990
-    ((orange brown: #aa7446
-    ((signal black: #2a2622
-    cream: #fffee5
-  } */
+  --gold: #ffd369;
 }
 * {
   margin: 0;
@@ -30,7 +16,7 @@
 main {
   display: flex;
   flex-flow: row wrap;
-  background-color: #222831;
+  background-color: var(--main-background-color);
   width: 100%;
   min-height: var(--size-14);
   max-height: var(--size-15);
@@ -65,13 +51,13 @@ footer {
   flex: 2 2;
 }
 .nameCard h1 {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: var(--text-light);
   text-align: center;
   font-size: 8ch;
 }
 .nameCard h2 {
-  color: #ffd369;
+  color: var(--gold);
   font-family: MontserratAceRegular;
   font-size: 4ch;
 }
@@ -80,7 +66,7 @@ footer {
   grid-column-end: 1;
   grid-row-start: 1;
   grid-row-end: 1;
-  background-color: #ffd369;
+  background-color: var(--gold);
   width: 20vmax;
   height: 20vmax;
   border-radius: var(--radius-blob-4);
@@ -114,33 +100,57 @@ footer {
   background-color: var(--about-background-color);
   height: 350px;
 }
+.about p {
+  margin: var(--size-1);
+  max-inline-size: var(--size-content-2);
+  font-size: var(--size-4);
+}
+/* ------------------------------- Me Section ------------------------------- */
 .me {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  /* background-color: red; */
   flex: 1 2;
-  width: 200px;
-  height: 250px;
-  margin: 30px;
+  width: 240px;
+  height: 300px;
 }
 .me h1 {
-  font-size: 10ch;
+  color: var(--gold);
+  font-size: max(5vw, 6ch);
 }
-.meText p {
-  margin: var(--size-1);
-  max-inline-size: var(--size-content-2);
-  font-size: var(--size-4);
-}
-
-.meText {
+.meLeft {
+  color: var(--gray-3);
+  font-family: Arial, Helvetica, sans-serif, monospace;
   display: flex;
-  background-color: red;
-  flex: 2 2;
-  width: 200px;
+  /* background-color: red; */
+  flex: 1 2;
   height: 250px;
-  margin: 30px;
+  margin-right: 10px;
+  text-align: right;
+  justify-content: flex-end;
+  align-items: center;
+}
+.verLine {
+  width: 3px;
+  height: 250px;
+  border-radius: 10px;
+  background-color: var(--gold);
+  box-shadow: 0px 0px 20px black;
+}
+.meRight {
+  color: var(--gray-3);
+  font-family: Arial, Helvetica, sans-serif, monospace;
+  display: flex;
+  /* background-color: red; */
+  flex: 1 2;
+  height: 250px;
+  margin: 0;
+  margin-left: 10px;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: center;
 }
 /* --------------------------------- Gallery -------------------------------- */
 .gallery {
@@ -156,6 +166,9 @@ footer {
   background-color: var(--galleryFrame-background-color);
   width: 400px;
   border-radius: var(--radius-blob-3);
+}
+.gFrame:hover {
+  box-shadow: var(--inner-shadow-1);
 }
 /* -------------------------------- STARS!!! -------------------------------- */
 #stars {
@@ -183,12 +196,38 @@ footer {
     border-radius: var(--radius-blob-1);
   }
 }
+/* ---------------------------- Name shrink phone --------------------------- */
 @media (max-width: 559px) {
   .nameCard h1 {
     font-size: 6ch;
   }
+  .nameCard h2 {
+    font-size: 3ch;
+  }
+}
+/* --------------------------- About shrink phone --------------------------- */
+@media (max-width: 733px) {
+  .about {
+    height: 600px;
+    flex-direction: column;
+  }
+  .verLine {
+    height: 3px;
+    width: 70vw;
+  }
+  .me {
+    height: 250px;
+  }
+  .meLeft {
+    margin: 0;
+    text-align: center;
+  }
+  .meRight {
+    margin: 0;
+    text-align: center;
+  }
 }
 @font-face {
-  font-family: "Hi Score";
+  font-family: 'Hi Score';
   src: url(/Fonts/NewHiScore.ttf);
 }
