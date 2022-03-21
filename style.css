@@ -118,7 +118,7 @@ footer {
 }
 .me h1 {
   color: var(--gold);
-  font-size: max(5vw, 6ch);
+  font-size: calc(20px + 4vw);
 }
 .meLeft {
   color: var(--gray-3);
@@ -217,6 +217,9 @@ footer {
   }
   .me {
     height: 250px;
+  }
+  .me h1 {
+    font-size: 6ch;
   }
   .meLeft {
     margin: 0;
