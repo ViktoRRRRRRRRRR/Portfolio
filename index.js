@@ -1,7 +1,7 @@
 'use strict';
 console.log('Js Initialised');
 const gFrame = document.getElementsByClassName('gFrame');
-
+const scrollContainer = document.getElementsByClassName('gallery')[0];
 /**
  *
  * @param {number} max upper random ceiling
@@ -33,4 +33,9 @@ for (let i = 0; i < gFrame.length; i++) {
 
 particlesJS.load('stars', '/Particles/particlesjs-config.json', function () {
   console.log('callback - particles.js config loaded');
+});
+/* -------------------------- horizontal scrolling -------------------------- */
+scrollContainer.addEventListener('wheel', (evt) => {
+  evt.preventDefault();
+  scrollContainer.scrollLeft += evt.deltaY;
 });
