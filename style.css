@@ -217,6 +217,7 @@ footer {
   }
   .me {
     height: 250px;
+    width: 300px;
   }
   .me h1 {
     font-size: 6ch;
