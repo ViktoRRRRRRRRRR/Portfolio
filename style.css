@@ -30,6 +30,24 @@ footer {
   margin: 0;
   padding: 0;
 }
+body::-webkit-scrollbar {
+  height: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--gallery-background-color); /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--gold);
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid var(--gallery-background-color); /* creates padding around scroll thumb */
+}
+body {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: var(--gold) var(--gallery-background-color); /* scroll thumb and track */
+}
+
 /* -------------------- Children of Main (Face and Text) -------------------- */
 .faceCard {
   display: grid;
@@ -192,6 +210,10 @@ footer {
   width: 100%;
   height: 22vw;
   min-height: 320px;
+}
+/* ------------------------------ footer stuff ------------------------------ */
+footer {
+  background-color: var(--gold);
 }
 /* ----------- Animations Fonts and Media (TODO: CLEAN UP UNUSED) ----------- */
 @keyframes wobble {

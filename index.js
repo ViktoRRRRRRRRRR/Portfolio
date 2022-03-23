@@ -34,8 +34,34 @@ for (let i = 0; i < gFrame.length; i++) {
 particlesJS.load('stars', '/Particles/particlesjs-config.json', function () {
   console.log('callback - particles.js config loaded');
 });
+/* --------------------------- prevent scroll func -------------------------- */
+let scrollBlock = true; // very important variable - decides if scroll should be blocked
+/**
+ *
+ * @param {event} evt accepts the event to stop scroll
+ */
+function prevent(evt) {
+  if (scrollBlock === true) {
+    evt.preventDefault();
+  }
+}
 /* -------------------------- horizontal scrolling -------------------------- */
 scrollContainer.addEventListener('wheel', (evt) => {
-  evt.preventDefault();
+  prevent(evt);
   scrollContainer.scrollLeft += evt.deltaY;
 });
+/* ------------------------- detect scroll to top and let  ------------------------ */
+scrollContainer.addEventListener('scroll', () => {
+  if (scrollContainer.scrollLeft <= 0) {
+    scrollBlock = false;
+  } else {
+    scrollBlock = true;
+  }
+});
+// if (
+//   scrollContainer.offsetWidth + scrollContainer.scrollLeft >=
+//   scrollContainer.scrollWidth
+// ) {
+//   console.log('scrolled to bottom'); to detect if scrolled to bottom which currently isnt useful
+//   scrollBlock = false;
+// }
