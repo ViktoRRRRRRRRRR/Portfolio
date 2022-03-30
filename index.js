@@ -35,7 +35,8 @@ particlesJS.load('stars', '/Particles/particlesjs-config.json', function () {
   console.log('callback - particles.js config loaded');
 });
 /* --------------------------- prevent scroll func -------------------------- */
-let scrollBlock = true; // very important variable - decides if scroll should be blocked
+//set scrolBlock to true if there are many gFrames so scroll works well, otherwise keep it to false
+let scrollBlock = false; // very important variable - decides if scroll should be blocked
 /**
  *
  * @param {event} evt accepts the event to stop scroll
